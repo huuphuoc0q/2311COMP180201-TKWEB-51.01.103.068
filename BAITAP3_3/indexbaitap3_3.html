@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng quản lý sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+
+        }
+        #form_AddProduct{
+            background-color:rgb(197, 197, 197);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        #form_AddProduct h4{
+            display: block;
+            text-align: center;
+        }
+        .main{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <form class="row g-3 col-6" id="form_AddProduct">
+            <h4>Add New Product</h4>
+
+            <div class="col-6">
+                <input type="text" class="form-control" id="inputNameProduct" placeholder="New Product">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" onclick="addProduct()">Add</button>
+            </div>
+        </form>
+        <h4>Display ALL Product</h4>
+
+        <table class="table table-striped table-hover col-12">
+            <tr>
+                <th>Product Name </th>
+                <th></th>
+                <th id="numPro">9 Product</th>
+            </tr>
+
+            <tr>
+                <td class="col-10">Iphone 17 promax</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger">Danger</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        let list_Product = [
+                "iPhone 17 Pro Max",
+                "Samsung Galaxy S24 Ultra",
+                "Xiaomi 14 Ultra",
+                "Google Pixel 9 Pro",
+                "OnePlus 12",
+                "Oppo Find X7 Pro",
+                "Vivo X100 Pro",
+                "Huawei P70 Pro",
+                "Sony Xperia 1 VI",
+                "Asus ROG Phone 8"
+                ];
+        function createTR(text,i){
+                let tr = document.createElement("tr");
+                if(i%2==1){
+                    tr.style.backgroundColor = "#e3e2de";
+                }
+                tr.innerHTML = '<tr><td class="col-10">'+text+'</td><td><button type="button" class="btn btn-primary">Edit</button></td><td><button type="button" class="btn btn-danger">Delete</button></td></tr>'
+                return tr;
+        }
+        function show(){
+            let table = document.getElementsByTagName("table")[0];
+            table.innerHTML = "";
+            let title = document.createElement("tr");
+            let th1 = document.createElement("th");
+            th1.innerText = "Product Name";
+
+            title.appendChild(th1);
+            title.appendChild(document.createElement("th"));
+            title.appendChild(document.createElement("th"));
+            title.style.backgroundColor = "#e3e2de";
+            title.lastChild.innerText = list_Product.length + " Product";
+            table.appendChild(title);
+            for (let i = 0;i<list_Product.length;i++){
+                table.appendChild(createTR(list_Product[i],i));
+            }
+        }
+        show();
+        function addProduct(){
+            let Name_Product = document.getElementById("inputNameProduct").value;
+            
+        }
+    </script>
+</body>
+</html>
