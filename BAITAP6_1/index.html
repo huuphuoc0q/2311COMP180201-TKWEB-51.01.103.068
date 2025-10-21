@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6.1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div id="btn">
+     <button type="button" class="btn btn-primary" onclick="changeBg()">Change Background</button>
+        <button type="button" class="btn btn-success" onclick="playmusic()">Play Music</button>
+   </div>
+    <div id="shark">
+        <img src="shark.png" alt="">
+    </div>
+    <div id="tholan1">
+        <img src="diver1.png" alt="">
+    </div>
+    <div id="tholan2">
+        <img src="diver2.png" alt="">
+    </div>
+    <div id="tholan3">
+        <img src="diver3.png" alt="">
+    </div>
+    <div id="fish">
+        <img src="goldFishSchool.png" alt="">
+    </div>
+    <div id="faint">
+        <img src="faintSchool.png" alt="">
+    </div>
+    <div id="rua">
+        <img src="turtle.png" alt="">
+    </div>
+    <script>
+        let cnt = 0;
+        let play = false;
+        function changeBg(){
+            cnt = parseInt(cnt) + 1;
+            cnt = cnt%3;
+            let body = document.getElementsByTagName("body")[0];
+            body.style.backgroundImage = `url("Sea${cnt + 1}.jpg")`;
+        }
+        let audio = new Audio("sea.mp3");
+        function playmusic(){
+            if(play===false){
+                audio.loop = true;
+                audio.volume = 0.5;
+                play = true;
+                audio.play();
+            }
+            else{
+                audio.pause();
+                play = false;
+            }
+        }
+    </script>
+</body>
+</html>
