@@ -1,0 +1,128 @@
+body {
+  background: url('Sea1.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+
+div {
+  position: absolute;
+}
+
+img {
+  width: 150px;
+}
+#btn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#tholan1 {
+  top: 200px;
+  left: 100px;
+  animation: diverUpDown 4s linear infinite alternate-reverse;
+}
+
+#tholan2 {
+  top: 150px;
+  left: 300px;
+  animation: diverUpDown 5s linear infinite alternate-reverse;
+}
+
+#tholan3 {
+  top: 250px;
+  left: 600px;
+  animation: diverUpDown 6s linear infinite alternate;
+}
+
+#shark {
+  top: 200px;
+  left: 0;
+  animation: sharkSwim 10s linear infinite;
+}
+
+#rua {
+  top: 500px;
+  left: 100px;
+  animation: ruaSwim 20s linear infinite;
+}
+
+#fish {
+  top: 350px;
+  left: 200px;
+  animation: fishSwim 14s linear infinite;
+}
+
+#faint {
+  top: 400px;
+  left: 600px;
+  animation: faintSwim 16s linear infinite;
+}
+
+
+@keyframes diverUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(200px); }
+}
+
+@keyframes sharkSwim {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  49% {
+    left: calc(100%);
+    transform: scaleX(1);
+  }
+  50% {
+    left: calc(100%);
+    transform: scaleX(-1);
+  }
+  99% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ruaSwim {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  49% {
+    left: calc(100%);
+    transform: scaleX(1);
+  }
+  50% {
+    left: calc(100%);
+    transform: scaleX(-1);
+  }
+  99% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+  100% {
+    left: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fishSwim {
+  0% { left: 100px; transform: scaleX(1); }
+  49% { left: calc(100%); transform: scaleX(1); }
+  50% { left: calc(100%); transform: scaleX(-1); }
+  99% { left: 100px; transform: scaleX(-1); }
+  100% { left: 100px; transform: scaleX(1); }
+}
+
+@keyframes faintSwim {
+  0% { left: calc(100% ); transform: scaleX(-1); }
+  49% { left: 0; transform: scaleX(-1); }
+  50% { left: 0; transform: scaleX(1); }
+  99% { left: calc(100% ); transform: scaleX(1); }
+  100% { left: calc(100% ); transform: scaleX(-1); }
+}
