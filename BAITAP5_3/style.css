@@ -64,7 +64,7 @@ body{
 
 .pic{
     width: 50%;
-    background-image: url('/image/phone1.jpeg');
+    background-image: url('phone1.jpeg');
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -88,4 +88,5 @@ body{
 }
 i{
     font-size: 2rem;
+
 }
