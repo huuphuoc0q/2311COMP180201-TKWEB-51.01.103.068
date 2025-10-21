@@ -1,0 +1,91 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.list_product_div{
+    gap: 5px;
+    width: 70%;
+    height: 100%;   
+    display: flex;
+    flex-wrap: wrap;
+}
+.info{
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    gap: 10px;
+    display: flex;
+
+}
+ .timkiem{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+ }
+.type{
+    width: 100%;
+    background-color: rgb(228, 228, 228);
+    height: 25px;
+}
+.dathang, .chungloai{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.noidung img{
+    width: 50%;
+    height: 100%;
+}
+.noidung{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+}
+.info .title{
+    width: 100%;
+    height: 25%;
+    color: white;
+    background-color:rgb(112, 112, 112);
+}
+.title p{
+    margin: 5px;
+}
+
+.pic{
+    width: 50%;
+    background-image: url('/image/phone1.jpeg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.thongtin{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.thongtin .name{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid grey;
+}
+.ban{
+    padding: 5px;
+    border-bottom: 1px solid grey;
+}
+.chitiet{
+    border-bottom: 1px solid grey;
+}
+i{
+    font-size: 2rem;
+}
